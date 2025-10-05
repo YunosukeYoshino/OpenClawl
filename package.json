@@ -1,0 +1,27 @@
+{
+  "name": "clawl",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.7.3",
+    "cheerio": "^1.1.2",
+    "hono": "^4.9.9",
+    "wrangler": "^4.42.0",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.5",
+    "@cloudflare/vitest-pool-workers": "^0.9.10",
+    "@cloudflare/workers-types": "^4.20251004.0",
+    "@types/bun": "latest",
+    "vitest": "^3.2.4"
+  }
+}

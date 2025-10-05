@@ -1,0 +1,22 @@
+name = "clawl"
+main = "src/index.ts"
+compatibility_date = "2025-10-01"
+
+# KV Namespaces for caching
+[[kv_namespaces]]
+binding = "CACHE_KV"
+id = "YOUR_KV_ID_HERE"
+preview_id = "YOUR_PREVIEW_KV_ID_HERE"
+
+# Environment variables (set via wrangler secret put)
+[vars]
+CORS_ORIGINS = "*"
+# API_KEYS should be set via: wrangler secret put API_KEYS
+
+# Development settings
+[env.development]
+vars = { CORS_ORIGINS = "*", LOG_LEVEL = "debug" }
+
+# Production settings
+[env.production]
+vars = { CORS_ORIGINS = "https://yourdomain.com", LOG_LEVEL = "info" }
